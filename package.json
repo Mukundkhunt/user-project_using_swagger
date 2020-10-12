@@ -1,0 +1,26 @@
+{
+    "name": "user-project_using_swagger",
+    "version": "1.0.1001",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "nodemon index.js",
+        "start": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Mukundkhunt/user-project_using_swagger.git"
+    },
+    "keywords": [
+        "express",
+        "mongoose",
+        "nodemon",
+        "http-status"
+    ],
+    "author": "Mukund",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Mukundkhunt/user-project_using_swagger/issues"
+    },
+    "homepage": "https://github.com/Mukundkhunt/user-project_using_swagger#readme"
+}
