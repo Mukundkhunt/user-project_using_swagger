@@ -56,6 +56,13 @@
                 "tags": ["user"],
                 "summary": "Get Specific Using email the user",
                 "parameters": [{
+                    "name": "password",
+                    "in": "query",
+                    "description": "Password is required",
+                    "required": "true",
+                    "type": "string",
+                    "schema": { "example": "mukund" }
+                }, {
                     "in": "query",
                     "name": "email",
                     "description": "Email is required",
