@@ -1,0 +1,150 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "discretion": "The Swagger api server",
+        "version": "1.0.1",
+        "title": "Swagger Api",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "mukund.semicolon@gmail.com"
+        },
+        "licence": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+
+    },
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "host": "localhost:5000",
+    "tags": [{
+            "name": "user",
+            "description": "Everything about your Food"
+        },
+        {
+            "name": "Project",
+            "description": "What you want to eat"
+        }
+    ],
+    "schemes": ["http"],
+    "paths": {
+        "/user": {
+            "get": {
+                "tags": ["user"],
+                "summary": "Get All the user",
+                "responses": {}
+            }
+        },
+        "/user/specific": {
+            "get": {
+                "tags": ["user"],
+                "summary": "Get Specific the user",
+                "parameters": [{
+                    "in": "query",
+                    "name": "userid",
+                    "description": "User is required",
+                    "type": "string",
+                    "required": "true",
+                    "schema": { "example": "5f83ce6301e0664620f1819b" }
+
+                }],
+                "responses": {}
+            }
+        },
+        "/user/emails": {
+            "get": {
+                "tags": ["user"],
+                "summary": "Get Specific Using email the user",
+                "parameters": [{
+                    "in": "query",
+                    "name": "email",
+                    "description": "Email is required",
+                    "type": "string",
+                    "required": "true",
+                    "schema": { "example": "khuntmukund123@gmail.com" }
+
+                }],
+                "responses": {}
+            }
+        },
+        "/user/post": {
+            "post": {
+                "tags": ["user"],
+                "summary": "Create User Account",
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Unique Email address and Password",
+                    "schema": {
+                        "required": ["email", "password"],
+                        "properties": {
+                            "name": { "type": "string" },
+                            "email": { "type": "string" },
+                            "password": { "type": "string" }
+                        },
+                        "example": {
+                            "name": "Mukund Khunt",
+                            "email": "mukund.semicolon@gmail.com",
+                            "password": "mypassword"
+
+                        }
+                    }
+                }],
+                "responses": {}
+            }
+        },
+        "/user/put": {
+            "put": {
+                "tags": ["user"],
+                "summary": "Update User profile",
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Update the user data",
+                        "schema": {
+                            "properties": {
+                                "name": { "type": "string" },
+                                "email": { "type": "string" },
+                                "password": { "type": "string" }
+                            },
+                            "example": {
+                                "name": "Mukund Khunt(M.K.)",
+                                "email": "mukund.semicolon@gmail.com",
+                                "password": "mypassword"
+
+                            }
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "userid",
+                        "description": "User is required",
+                        "type": "string",
+                        "required": "true",
+                        "schema": { "example": "5f83f764113573220832f0fc" }
+                    }
+                ],
+                "responses": {}
+
+            }
+        },
+        "/user/delete": {
+            "delete": {
+                "tags": ["user"],
+                "summary": "Delete User Record",
+                "parameters": [{
+                    "in": "query",
+                    "name": "userid",
+                    "description": "User is required",
+                    "type": "string",
+                    "required": "true",
+                    "schema": { "example": "5f83ce6301e0664620f1819b" }
+
+                }],
+                "responses": {}
+
+            }
+        }
+    }
+
+}
