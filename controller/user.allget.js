@@ -1,8 +1,8 @@
 const UserModel = require('../model/user.model')
 const httpStatus = require('http-status')
 const mongoose = require('mongoose')
-module.exports = (req, res) => {
-    UserModel.find({
+module.exports = async(req, res) => {
+    await UserModel.find({
             // password: req.query.password
             // email: req.query.email
             // _id: req.query.userid

@@ -4,6 +4,15 @@ module.exports = (req, res) => {
     if (!req.query) {
         res.status(httpStatus.INTERNAL_SERVER_ERROR).send("Missing email is required")
     } else {
-        UserModel.find({ email: req.query.email, password: req.query.password }).then(result => res.send(result)).catch(err => console.log(err))
+        new Promise(async(resolve, reject) => {
+            try {
+                const questionSolve = await UserModel.find({ email: req.query.email, password: req.query.password })
+                    .then(result => res.send(result))
+                    .catch(err => console.log(err))
+            } catch (err) {
+                reject(err)
+            }
+        })
+
     }
 }
