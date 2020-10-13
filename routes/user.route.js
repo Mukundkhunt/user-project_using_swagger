@@ -6,11 +6,12 @@ const userGet = require('../controller/user.get')
 const userDelete = require('../controller/user.delete')
 
 
-route.post('/post', userPost)
-route.get('/specific', userGet)
-route.put('/put', userPut)
-route.delete('/delete', userDelete)
-route.get('/', require('../controller/user.allget'))
-route.get('/emails', require('../controller/user.email.send'))
+route.post('/user/post', userPost)
+route.get('/user/specific', userGet)
+route.put('/user/put', userPut)
+route.delete('/user/delete', userDelete)
+route.get('/user', require('../controller/user.allget'))
+route.get('/user/emails', require('../controller/user.email.send'))
+route.put('/user/update', require('../controller/user.modify'))
 
 module.exports = route

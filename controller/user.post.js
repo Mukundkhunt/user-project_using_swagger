@@ -5,6 +5,7 @@ module.exports = (req, res) => {
     if (!req.body) {
         res.status(httpStatus.INTERNAL_SERVER_ERROR).send("Body is missing")
     } else {
+        await
         let model = new UserModel(req.body)
         model.save().then(result => {
             if (!result || result.length === 0) {

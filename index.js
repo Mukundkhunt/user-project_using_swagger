@@ -9,7 +9,7 @@ app.use((req, res, next) => {
 
     next()
 })
-app.use('/user', userRoute)
+app.use('', userRoute)
 app.use('', swagger)
     // app.listen(port = process.env.PORT || 5000, () => {
     //     console.log(`Server is running on port :-> ${port}`)
